@@ -22,21 +22,26 @@ submitBtn.addEventListener("click",()=>{
     newDiv.className = "paraCover";
     newDiv.innerHTML =`
     <p>${sentence}</p>
+    <input type = "text" style ="display:none;margin:2rem 0">
     <div class="btnContainer" style="display:flex;gap:5px">
-    <button class="delete">Delete</button>
+    <button class="done" style = "display:none">Done</button>
+    <button class="edit">Edit</button>
     <button class="copy">Copy</button>
-    </div>
+    <button class="delete">Delete</button>
+    </div> 
     `;
+    
     paraContainer.append(newDiv);
     input.value="";
-    notEmpty = true;
 
-    if(notEmpty){
     let delBtn = document.querySelectorAll('.delete');
     delBtn.forEach(elem => elem.addEventListener('click', deleteFunc));
-}
+
     let copyBtn = document.querySelectorAll(".copy");
-    copyBtn.forEach(elem=>elem.addEventListener("click",copyFunc));
+    copyBtn.forEach(elem => elem.addEventListener("click",copyFunc));
+    
+    let editBtn = document.querySelectorAll(".edit");
+    editBtn.forEach(elem=>elem.addEventListener("click",editFunc));
 });
 
 
@@ -66,4 +71,22 @@ function copyFunc(){
     this.innerText = "Copy";
     this.style.backgroundColor = "rgb(216, 76, 76)"
     });
+}
+
+function editFunc (){
+    let para =this.parentElement.parentElement.children[0];
+    let edit = this.parentElement.parentElement.children[1];
+    let done = this.previousSibling.previousSibling;
+    edit.value = para.innerText;
+    done.style.display = "block";
+    edit.style.display = "block";
+    para.style.display = "none";
+
+    done.addEventListener("click",()=>{
+    para.innerText = edit.value;
+    done.style.display = "none";
+    edit.style.display = "none";
+    para.style.display = "block";
+    })
+
 }
