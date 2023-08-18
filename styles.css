@@ -87,6 +87,22 @@ h1{
 button:hover{
     background-color: rgb(228, 130, 130);
 }
+@media (max-width:810px) {
+    body{
+    margin: 0 2rem;
+    }
+    
+    .genContainer{
+        height: 3rem;
+    }
+    .genContainer>input{
+        width: 85%;
+        font-size: 1.5rem;
+    }
+    .genContainer>button{
+        width: 15%;
+    }
+}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
