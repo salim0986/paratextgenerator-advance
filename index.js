@@ -22,7 +22,7 @@ submitBtn.addEventListener("click",()=>{
     newDiv.className = "paraCover";
     newDiv.innerHTML =`
     <p>${sentence}</p>
-    <input type = "text" style ="display:none;margin:2rem 0">
+    <textarea style ="display:none;margin:2rem 0"></textarea>
     <div class="btnContainer" style="display:flex;gap:5px">
     <button class="done" style = "display:none">Done</button>
     <button class="edit">Edit</button>
