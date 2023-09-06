@@ -6,6 +6,17 @@
 h1{
     font-family: 'Merriweather',serif;
 }
+textarea{
+    display: block;
+    margin: 2rem 0px;
+    padding: 0.2rem 0.4rem;
+    width: 95%;
+    resize: none;
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+    text-align: center;
+}
 .genContainer{
     display: flex;
     justify-content: center;
@@ -26,6 +37,7 @@ h1{
     text-align: center;
     padding: 0;
     width: 90%;
+    min-height: 8rem;
     font-size: 2.5rem;
 }
 .genContainer>button{
@@ -56,7 +68,6 @@ h1{
     flex-direction: column;
     align-items: center;
     width: 100%;
-    border: 1px solid black;
 }
 .paraContainer>.paraCover>p,.paraContainer>.paraCover>input{
     background-color: black;
@@ -103,6 +114,20 @@ button:hover{
         width: 15%;
     }
 }
+
+@media (min-width:315px) and (max-width:500px){
+    body{
+        margin:0;
+}
+    genContainer>input{
+        font-size:medium;
+    }
+    genContainer>button{
+        width:25%;
+    }
+    .paraCover{
+        width:90%
+    }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
